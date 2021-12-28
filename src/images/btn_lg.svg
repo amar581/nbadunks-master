@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="348px" height="59px" viewBox="0 0 348 59" enable-background="new 0 0 348 59" xml:space="preserve">
+<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="-30.8794" y1="793.6396" x2="695.0656" y2="868.3083" gradientTransform="matrix(1 0 0 1 16.6797 -782.9199)">
+	<stop  offset="0" style="stop-color:#FF56F6"/>
+	<stop  offset="1" style="stop-color:#4C9CE3"/>
+</linearGradient>
+<path fill="url(#SVGID_1_)" d="M330.434,2.758c-1.125-1.125-2.65-1.757-4.242-1.757H9c-3.313,0-6,2.686-6,6v34.674
+	c0,1.592,0.632,3.117,1.757,4.242l11.326,11.326c1.126,1.125,2.652,1.758,4.243,1.758H337c3.314,0,6-2.688,6-6V17.81
+	c0-1.591-0.632-3.118-1.757-4.243L330.434,2.758z"/>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="2" y="0" width="205" height="60.001">
+		<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="2" y="0" width="205" height="60.001" id="path-1-inside-1">
+	<path fill="#FFFFFF" filter="url(#Adobe_OpacityMaskFilter)" d="M193.434,2.758c-1.125-1.125-2.651-1.757-4.243-1.757H9
+		c-3.313,0-6,2.686-6,6v34.674c0,1.592,0.632,3.117,1.757,4.242l11.326,11.326c1.126,1.125,2.652,1.758,4.243,1.758H200
+		c3.314,0,6-2.688,6-6V17.81c0-1.591-0.632-3.118-1.757-4.243L193.434,2.758z"/>
+</mask>
+<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="-24.9976" y1="801.29" x2="412.5025" y2="846.2902" gradientTransform="matrix(1 0 0 1 16.6797 -782.9199)">
+	<stop  offset="0" style="stop-color:#FF56F6"/>
+	<stop  offset="1" style="stop-color:#4C9CE3"/>
+</linearGradient>
+<path mask="url(#path-1-inside-1)" fill="url(#SVGID_2_)" d="M204.243,13.567l0.707-0.707L204.243,13.567z M16.083,57.243
+	l-0.707,0.707L16.083,57.243z M4.757,45.917l0.707-0.707L4.757,45.917z M193.434,2.758l0.707-0.707L193.434,2.758z M189.191,0.001H9
+	v2h180.191V0.001z M2,7.001v34.674h2V7.001H2z M4.05,46.624L15.376,57.95l1.414-1.414L5.464,45.21L4.05,46.624z M20.326,60.001H200
+	v-2H20.326V60.001z M207,53.001V17.81h-2v35.191H207z M204.95,12.86L194.141,2.051l-1.414,1.415l10.809,10.809L204.95,12.86z
+	 M207,17.81c0-1.856-0.738-3.637-2.05-4.95l-1.414,1.414c0.937,0.938,1.464,2.209,1.464,3.536H207z M200,60.001c3.866,0,7-3.135,7-7
+	h-2c0,2.762-2.239,5-5,5V60.001z M15.376,57.95c1.313,1.313,3.094,2.051,4.95,2.051v-2c-1.326,0-2.598-0.527-3.536-1.465
+	L15.376,57.95z M2,41.675c0,1.856,0.737,3.637,2.05,4.949l1.414-1.414C4.527,44.272,4,43.001,4,41.675H2z M9,0.001
+	c-3.866,0-7,3.134-7,7h2c0-2.762,2.239-5,5-5V0.001z M189.191,2.001c1.326,0,2.598,0.526,3.536,1.464l1.414-1.415
+	c-1.313-1.313-3.093-2.05-4.95-2.05V2.001z"/>
+</svg>

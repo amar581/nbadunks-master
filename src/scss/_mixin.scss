@@ -1,0 +1,519 @@
+@mixin gradient-border {
+  --border-width: 3px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: var(--border-width);
+
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      $theme_colboC,
+      $theme_colboC
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+  }
+
+
+&:hover {
+  background-color:  $theme_colbC;
+  color: #fff;
+  &::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      rgb(240,104,35)
+      // hsl(359, 85%, 66%),
+      // hsl(314, 85%, 66%),
+      // hsl(359, 85%, 66%),
+      // hsl(44, 85%, 66%),
+      // hsl(359, 85%, 66%),
+      // hsl(26, 85%, 66%),
+      // hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+   
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+}
+}
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+
+.theme_btn {
+    // @include btn-border-slide(#252525, #168dff, 2px, 0.8s, 1px);
+    @include gradient-border; 
+    font-size: 1.1rem;
+    font-weight: bold;
+    background-color: $btn_BC;
+    &:hover {
+      box-shadow:0 0 19px $box-shadow;
+      transition: all .2s ease-in-out;
+        color: #fff;
+    }
+
+  }
+
+  .banner_btn {
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 62px;
+    height: 51px;
+    line-height: 30px;
+    color: #fff !important;
+    background: $theme_colbC;  
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    transition: background 1s; /* For modern browsers */
+
+    @media (max-width:768px) {
+      margin-bottom: 10px;
+  }
+
+    &:hover {
+      border-color: $theme_colbHC !important;
+      color: #fff;
+      box-shadow:0 0 19px $box-shadow;
+      transition: all .2s ease-in-out;
+      background: $theme_colbHC;
+      animation: moveGradient 4s alternate infinite;
+  }
+  }
+
+
+
+  .banner_btnW {
+
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    height: 51px;
+    line-height: 30px;
+    padding: 10px 62px;
+    text-decoration: none;
+    color: $theme_colbC !important;
+    background: rgb(255,255,255);  
+    font-family: "Poppins", sans-serif;
+    transition: background 1s; /* For modern browsers */
+    @media (max-width:768px) {
+      margin-bottom: 10px;
+  }
+
+  }
+
+
+
+  .center_btn {
+
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 10px 62px;
+    height: 51px;
+    line-height: 30px;
+    color: #fff !important;
+    background:  $theme_colbC;  
+    font-family: "Poppins", sans-serif;
+    text-decoration: none;
+    transition: background 1s; /* For modern browsers */
+    
+    width: 269px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 32px auto 0 auto;
+    display: table;
+    // background: #280e09;  
+    transition: background 1s; /* For modern browsers */
+    &:hover {
+      border-color:  $theme_colbHC !important;
+      color: #fff;
+      box-shadow:0 0 19px $box-shadow;
+      transition: all .2s ease-in-out;
+      background:  $theme_colbHC;
+      animation: moveGradient 4s alternate infinite;
+     
+     
+  }
+  }
+
+
+
+
+  //magic border
+  @mixin magic-border($width, $color, $duration, $direction){
+    position:relative;
+      &:before{
+        content:'';
+        position:absolute;
+        width:calc(100% + #{$width * 2});
+        height:calc(100% + #{$width * 2});
+        top:calc(#{$width}/-1);
+        left:calc(#{$width}/-1);
+        background:linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to top, $color 50%, transparent 50%), linear-gradient(to right, $color 0%, $color 100%), linear-gradient(to left, $color 0%, $color 100%);
+        background-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+        background-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+        background-repeat:no-repeat, no-repeat;
+        transition:transform $duration ease-in-out, background-position $duration ease-in-out, background-size $duration ease-in-out;
+        transform:scaleX(0) rotate(180deg * $direction);
+        transition-delay:$duration*2, $duration, 0s;
+      }
+      &:hover{
+        &:before{
+          background-size:200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+          background-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+          transform:scaleX(1) rotate(180deg * $direction);
+          transition-delay:0s, $duration, $duration*2;
+        }
+      }
+  }
+  
+  @mixin magic-border-mask($width, $duration, $background, $direction){
+    position:relative;
+      &:before{
+        content:'';
+        position:absolute;
+        width:calc(100% + #{$width * 2});
+        height:calc(100% + #{$width * 2});
+        top:calc(#{$width}/-1);
+        left:calc(#{$width}/-1);
+        mask:linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to top, #000 50%, transparent 50%), linear-gradient(to right, #000 0%, #000 100%), linear-gradient(to left, #000 0%, #000 100%);
+        mask-size:100% $width, $width 200%, $width 200%, 0% $width, 0% $width;
+        mask-position:50% 100%, 0% 0%, 100% 0%, 100% 0%, 0% 0%;
+        mask-repeat:no-repeat, no-repeat;
+        transition:transform $duration ease-in-out, mask-position $duration ease-in-out, mask-size $duration ease-in-out;
+        transform:scaleX(0) rotate(180deg * $direction);
+        transition-delay:$duration*2, $duration, 0s;
+        background:$background;
+      }
+      &:hover{
+        &:before{
+          mask-size:200% $width, $width 400%, $width 400%, 55% $width, 55% $width;
+          mask-position:50% 100%, 0% 100%, 100% 100%, 100% 0%, 0% 0%;
+          transform:scaleX(1) rotate(180deg * $direction);
+          transition-delay:0s, $duration, $duration*2;
+        }
+      }
+  }
+
+
+  .buyB {
+    background: $theme_colbC;
+    box-shadow: 0px 4px 97px $box-shadow;
+    backdrop-filter: blur(192px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 3px;
+    margin: 6px 0px;
+    padding: 10px 35px 7px;
+    color: $white-color;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem; margin-right: 15px;
+
+&:hover {
+  box-shadow:0 0 19px  $box-shadow;
+  transition: all .2s ease-in-out;
+}
+        }
+
+        .MOffer {
+            
+            /* Note: backdrop-filter has minimal browser support */
+            border-radius: 3px;
+            margin: 5px 0px;
+            padding: 6px 35px 6px;
+            color: $white-color;
+            font-weight: bold;
+            font-size: 1.1rem;
+            background-color: $btn_BC;
+            border: $theme_colbC 2px solid;
+            font-family: 'Poppins', sans-serif;
+            &:hover {
+              background-color: $theme_colbHC;
+              box-shadow:0 0 19px  $box-shadow;
+              transition: all .2s ease-in-out;
+
+            }
+                }
+              
+
+
+
+
+
+                //Bubble Animation
+               
+ 
+                $bubble-count: 15;
+                $sway-type: "sway-left-to-right", "sway-right-to-left";
+                
+                @function random_range($min, $max) {
+                  $rand: random();
+                  $random_range: $min + floor($rand * (($max - $min) + 1));
+                  @return $random_range;
+                }
+                
+                @function sample($list) {
+                  @return nth($list, random(length($list)));
+                }
+                
+                .bubbles {
+                  position: absolute;
+                  width: 100%;
+                  top: 0;
+                  height: 100vh;
+                  overflow: hidden;
+                }
+                
+                .bubble {
+                  position: absolute;
+                  left: var(--bubble-left-offset);
+                  bottom: -75%;
+                  display: block;
+                  z-index: 9;
+                  width: var(--bubble-radius);
+                  height: var(--bubble-radius);
+                  border-radius: 50%;
+                  animation: float-up var(--bubble-float-duration) var(--bubble-float-delay) ease-in infinite;
+                
+                  &::before {
+                    position: absolute;
+                    content: '';
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(88, 13, 117,0.2);
+                    filter: blur(40px);
+                    border-radius: inherit;
+                    animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+                  }
+                
+                  @for $i from 0 through $bubble-count {
+                    &:nth-child(#{$i}) {
+                      --bubble-left-offset: #{random_range(0vw, 100vw)};
+                      --bubble-radius: #{random_range(1vw, 10vw)};
+                      --bubble-float-duration: #{random_range(6s, 12s)};
+                      --bubble-sway-duration: #{random_range(4s, 6s)};
+                      --bubble-float-delay: #{random_range(0s, 4s)};
+                      --bubble-sway-delay: #{random_range(0s, 4s)};
+                      --bubble-sway-type: #{sample($sway-type)};
+                    }
+                  }
+                }
+                
+                @keyframes float-up {
+                  to {
+                    transform: translateY(-175vh);
+                  }
+                }
+                
+                @keyframes sway-left-to-right {
+                  from {
+                    transform: translateX(-100%);
+                  }
+                
+                  to {
+                    transform: translateX(100%);
+                  }
+                }
+                
+                @keyframes sway-right-to-left {
+                  from {
+                    transform: translateX(100%);
+                  }
+                
+                  to {
+                    transform: translateX(-100%);
+                  }
+                }
+
+                //fire animation
+
+                
+.mo-fire {
+  width: 200px;
+  height: auto;
+  position: absolute;
+  left:50%;
+
+  @media (max-width:1024px) {
+    display: none;
+  }
+  
+  margin-left: -100px;
+  margin-top: -160px;
+}
+.mo-fire svg {
+  width: 100%;
+  height: auto;
+  position: relative
+}
+.flame {
+  animation-name: flamefly;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  opacity: 0;
+  transform-origin: 50% 50% 0;
+}
+.flame.one {
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
+.flame3.two{
+  animation-duration: 5s;
+  animation-delay: 1s;
+}
+
+.flame-main {
+  animation-name: flameWobble;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.flame-main.one {
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+.flame-main.two {
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+.flame-main.three {
+  animation-duration: 2.1s;
+  animation-delay: 3s;
+}
+.flame-main.four {
+  animation-duration: 3.2s;
+  animation-delay: 4s;
+}
+.flame-main.five {
+  animation-duration: 2.5s;
+  animation-delay: 5s;
+}
+@keyframes flameWobble {
+  50% {
+    transform: scale(1,1.2) translate(0, -30px) rotate(-2deg);
+  }
+}
+@keyframes flamefly {
+  0%{
+    transform: translate(0) rotate(180deg);
+  }
+   50% {
+     opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, -100px) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+
+
+/* Animate Background*/
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+.background {
+  // background: linear-gradient(132deg, #FC415A, #591BC5, #212335);
+  // background-size: 400% 400%;
+  // animation: Gradient 15s ease infinite;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  padding:0;
+  margin:0px;
+  top: 0;
+}
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px #9695a7;
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+}
+.cube:nth-child(2n) {
+  border-color: #63626f ;
+}
+.cube:nth-child(2) {
+  animation-delay: 2s;
+  left: 25vw;
+  top: 40vh;
+}
+.cube:nth-child(3) {
+  animation-delay: 4s;
+  left: 75vw;
+  top: 50vh;
+}
+.cube:nth-child(4) {
+  animation-delay: 6s;
+  left: 90vw;
+  top: 10vh;
+}
+.cube:nth-child(5) {
+  animation-delay: 8s;
+  left: 10vw;
+  top: 85vh;
+}
+.cube:nth-child(6) {
+  animation-delay: 10s;
+  left: 50vw;
+  top: 10vh;
+}
