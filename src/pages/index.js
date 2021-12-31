@@ -39,7 +39,7 @@ import Arrow2 from "../images/60eeacde5628ed8ecc165492_arrow_2.svg";
 import Image2 from "../images/60f8175249906ed54d09c689_Frame 17.png";
 import Image3 from "../images/60f052a289fbfe5964780e95_image_3.png";
 import Announce from "../images/60f0535592383362d2383824_announce.png";
-import NFTImage from "../images/nfts/1.png";
+import NFTImage from "../images/9.png";
 import Ball1 from "../images/ball1.png";
 import Ball2 from "../images/ball2.png";
 import ImageSliderBall from "../images/60f03609d2f8fe01a462d4cd_Gutter Jonah.png";
@@ -540,8 +540,19 @@ const ref = useRef();
             id="w-node-db410f73-501e-a1c4-e8c4-ca38701e637e-6aec71e4"
             class="circle_box div-block-554"
           >
+              <div class="div-block-552 hideInDesk">
+                <div class="div-block-647">
+                  <h1 class="heading-3">
+                    OUR <br />
+                    <span class="text-span-6">ROADMAP</span>
+                  </h1>
+                </div>
+              </div>
             <div class="div-block-549 ellipse-1 circles">
               <div class="div-block-551 ">
+
+            
+
                 <div class="text-block-4">Phase 1</div>
                 <p class="paragraph-3">
                   {" "}
@@ -554,7 +565,7 @@ const ref = useRef();
               </div>
             </div>
             <div class="div-block-555">
-              <div class="div-block-552">
+              <div class="div-block-552 hideInMobile">
                 <div class="div-block-647">
                   <h1 class="heading-3">
                     OUR <br />
@@ -1013,7 +1024,7 @@ const ref = useRef();
             className='react-player playerPos'
             url= {Video}
             width='100%'
-            height='430px'
+            height='100%'
            
             controls = {false}
             config={{ file: { attributes: {
@@ -1094,15 +1105,15 @@ const ref = useRef();
         ref={ref}
         options={{
           rewind: false,
-          perPage: 5,
-          perMove: 5,
+          perPage: 4,
+          perMove: 4,
           gap: 0,
-          padding: "1rem",
+          padding: "0rem",
           pagination: false,
           breakpoints: {
             623: {
-              perPage: 1,
-              perMove: 1
+              perPage: 2,
+              perMove: 2
             },
             935: {
               perPage: 3,

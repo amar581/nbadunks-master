@@ -2547,7 +2547,7 @@ p {
   text-transform: uppercase;
 }
 .text-block-4.small {
-  font-size: 18px;
+  font-size: 32px;
   text-transform: uppercase;
 }
 .div-block-551 {
@@ -3634,6 +3634,7 @@ p {
 }
 .splide__track {
   width: 100%;
+  overflow: hidden;
 }
 .grid {
   display: -webkit-box;
@@ -3832,6 +3833,8 @@ p {
   -ms-flex-align: center;
   align-items: center;
   cursor: auto;
+
+
 }
 .large-cursor {
   position: absolute;
@@ -5108,9 +5111,9 @@ p {
 .splide__arrows.is--mobile-center {
   display: none;
 }
-.slider-tall {
-  padding-bottom: 3.5em;
-}
+// .slider-tall {
+//   padding-bottom: 3.5em;
+// }
 .slider-tall_img {
   position: relative;
   overflow: hidden;
@@ -10052,7 +10055,7 @@ p {
   margin: 0 !important;
   padding: 0 !important;
   width: -webkit-max-content;
-  width: max-content;
+  width: 100% !important;
   will-change: transform
 }
 
@@ -10591,15 +10594,23 @@ p {
 }
 
 
-
 .Bgcolor {
+  background-color: #0c1f30 !important;
+  position: relative;
+  z-index: 1;
+}
+
+
+@media  (max-width: 767px) {
+
+
+  .Bgcolor {
     background-color: #0c1f30 !important;
     position: relative;
     z-index: 1;
     overflow-x:hidden ;
 }
 
-@media  (max-width: 767px) {
 
   .text-span { background-image: none !important; background-color: #ff56f6 !important;}
 .timeline_item {
@@ -13216,6 +13227,7 @@ body.admin-bar .mobile-menu {
 
   .div-block-551 { padding-right: 0px; 
       padding-left: 0px;
+      padding:24px;
   }
 
   .div-block-552 {
@@ -13273,7 +13285,7 @@ body.admin-bar .mobile-menu {
   }
 
   .splide {
-      display:none !important;
+     
   }
 
   .div-block-591 {
@@ -13767,10 +13779,15 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 }
 
 
-.player-wrapper { position:relative !important;
+.player-wrapper { position:relative !important; height: 100%;
 
   .playerPos {
     position:absolute !important;
+    height: 100%;
+    
+    video {
+      object-fit: cover !important;
+    }
   }
 }
 
@@ -13781,5 +13798,17 @@ input::-moz-focus-inner, input::-moz-focus-outer {
 @media (max-width:768px) {
 
   .paddingMobile { padding-top: 40px !important;}
+
+.heading-13 { font-size:22px !important}
   
+.cursor-wrapper, .dot-container, .dot  { display:none !important}
+
+.hideInMobile { display:none;}
+.hideInDesk { display:block !important; margin-bottom: 20px;}
+
+.div-block-549 { margin-bottom: 0px !important;}
 }
+
+.hideInDesk { display:none;}
+//
+   
